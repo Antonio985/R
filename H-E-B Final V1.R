@@ -16,6 +16,8 @@ OfferPrice <- str_to_lower(PrecioOfertaproducto)
 
 VerMatriz <- data.frame(Name, Brand, AllPrice, OfferPrice)
 View(VerMatriz)
+
+#ejemplos de busqueda
 cant_data
 cant_science
 cant_harvard

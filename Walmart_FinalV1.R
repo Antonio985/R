@@ -5,24 +5,23 @@ library(stringr)
 url <- read_html("C:/Users/ptoo5/Documents/R/Walmart.html")
 
 Nameproducto <- url %>% html_nodes(xpath = '//*[@class="text_text__3qcEt"]') %>% html_text()
-Marcaproducto <- url %>% html_nodes(xpath = '//*[@class="category-brand"]') %>% html_text()
+
 Precioproducto <- url %>% html_nodes(xpath = '//*[@class="text_text__3qcEt text_inline__2hw9E text_bold__2G1zI"]') %>% html_text()
-PrecioOfertaproducto <- url %>% html_nodes(xpath = '//*[@data-price-type="finalPrice"]') %>% html_text()
 
 Name <- str_to_lower(Nameproducto)
-Brand <- str_to_lower(Marcaproducto)
 AllPrice <- str_to_lower(Precioproducto)
-OfferPrice <- str_to_lower(PrecioOfertaproducto)
 
-VerMatriz <- data.frame(Name, Brand, AllPrice, OfferPrice)
+VerMatriz <- data.frame(Name, AllPrice , fix.empty.names = TRUE)
 View(VerMatriz)
-cant_data
-cant_science
-cant_harvard
+#Ejemplos de busqueda
+
 cant_data <- sum(str_count(VerMatriz, regex("data")))
 cant_science <- sum(str_count(VerMatriz, regex("science")))
 cant_harvard <- sum(str_count(VerMatriz, regex("harvard")))
 
+cant_data
+cant_science
+cant_harvard
+
 Nameproducto
-Marcaproducto
 Precioproducto

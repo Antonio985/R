@@ -20,8 +20,8 @@ cant_science <- sum(str_count(VerMatriz, regex("science")))
 cant_harvard <- sum(str_count(VerMatriz, regex("harvard")))
 
 #data <- VerMatriz %>% filter(str_detect(Matriz, 'data'))
-
-Cantidades_Search <- data.frame(cant_data, cant_science, cant_harvard)
+data.f
+Cantidades_Search <- data.frame(Dato=c("Data", "Science", "Harvard"), Cantidades_Encontradas=c(cant_data, cant_science, cant_harvard))
 View(Cantidades_Search)
 Nombresedx <- data.frame(NameCurso)
 View(Nombresedx)

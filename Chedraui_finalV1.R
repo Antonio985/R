@@ -1,3 +1,5 @@
+#Chedraui sin problemas para generar scrapeo de datos en cuanto a nombre y precio
+
 library(magrittr) #for pipes
 library(dplyr) #for pull function
 library(rvest) #get html nodes
@@ -11,17 +13,17 @@ library(stringr)
 url <- read_html("C:/Users/ptoo5/Documents/R/chedraui.html")
 
 Nameproducto <- url %>% html_nodes(xpath = '//*[@class="vtex-product-summary-2-x-productBrand vtex-product-summary-2-x-brandName t-body"]') %>% html_text()
-Marcaproducto <- url %>% html_nodes(xpath = '//*[@class=""]') %>% html_text()
 Precioproducto <- url %>% html_nodes(xpath = '//*[@class="vtex-store-components-3-x-sellingPrice vtex-store-components-3-x-sellingPriceValue vtex-product-summary-2-x-sellingPrice dib ph2 t-body t-heading-5-ns vtex-product-summary-2-x-price_sellingPrice"]') %>% html_text()
-PrecioOfertaproducto <- url %>% html_nodes(xpath = '//*[@data-price-type="finalPrice"]') %>% html_text()
 
 Name <- str_to_lower(Nameproducto)
-Brand <- str_to_lower(Marcaproducto)
+
 AllPrice <- str_to_lower(Precioproducto)
-OfferPrice <- str_to_lower(PrecioOfertaproducto)
+
 
 VerMatriz <- data.frame(Name, AllPrice)
 View(VerMatriz)
+
+#Ejemplo de busqueda
 cant_data
 cant_science
 cant_harvard

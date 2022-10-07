@@ -10,10 +10,11 @@ Marcaproducto <- url %>% html_nodes(xpath = '//*[@class="product-tile--brand-lin
 Precioproducto <- url %>% html_nodes(xpath = '//*[@class="mr-0 font-primary--bold font-size-14   null px-1 cart-price price-plp"]') %>% html_text()
 
 Name <- str_to_lower(Nameproducto)
-Price <- str_to_lower(Marcaproducto)
-Brand <- str_to_lower(Precioproducto)
+Brand <- str_to_lower(Marcaproducto)
+Price <- str_to_lower(Precioproducto)
 
-VerMatriz <- data.frame(Nameproducto, Marcaproducto, Precioproducto)
+#Ejemplos de busqueda
+VerMatriz <- data.frame(Name, Brand, Price)
 View(VerMatriz)
 cant_data
 cant_science
